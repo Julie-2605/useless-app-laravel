@@ -24,5 +24,10 @@ class DatabaseSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+
+        //Thing Seeder
+        $this->call([
+            ThingSeeder::class,
+        ]);
     }
 }

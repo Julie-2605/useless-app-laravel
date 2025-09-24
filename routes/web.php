@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/drag-and-drop', function () {
     return Inertia::render('drag-and-drop');
-});
+})->name('drag-and-drop');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

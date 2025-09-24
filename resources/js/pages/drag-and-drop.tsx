@@ -1,33 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import DragDropList from "@/components/drag-drop-list";
-
-export interface Thing {
-    id: number;
-    name: string;
-    color: string;
-    position: number;
-}
+import { useDragDrop } from "@/hooks/use-drag-drop";
 
 export default function DragDropPage() {
-    const [things, setThings] = useState<Thing[]>([]);
-
-    useEffect(() => {
-        fetch("/api/things")
-        .then((res) => res.json())
-        .then((data: Thing[]) => setThings(data));
-    }, []);
+    const { things, setThings, shuffleThings, updateOrder } = useDragDrop();
 
     return (
-        <div className="p-6">
+        <main className="flex flex-col p-6 m-4">
             <h1 className="text-2xl font-bold mb-4">Drag & Drop</h1>
 
-            <DragDropList things={things} setThings={setThings} />
+            <DragDropList things={things} setThings={setThings} updateOrder={updateOrder} />
 
-            <button className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-lg" onClick={() => {
-                fetch("/api/things/shuffle", { method: "POST" })
-                .then((res) => res.json())
-                .then((data: Thing[]) => setThings(data));
-            }}>Shuffle</button>
-        </div>
+            <button className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-lg" onClick={shuffleThings}>Shuffle</button>
+        </main>
     );
 }

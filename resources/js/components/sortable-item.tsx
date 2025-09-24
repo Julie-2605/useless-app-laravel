@@ -1,7 +1,7 @@
 import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Thing } from "../pages/drag-and-drop";
+import { Thing } from "@/types/index";
 
 interface Props {
     id: number;

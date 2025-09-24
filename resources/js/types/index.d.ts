@@ -40,3 +40,10 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface Thing {
+    id: number;
+    name: string;
+    color: string;
+    position: number;
+}

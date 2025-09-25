@@ -24,15 +24,6 @@ export function initializeTheme() {
     applyTheme(savedAppearance as Appearance);
 };
 
-// export function initializeTheme() {
-//     const savedAppearance = (localStorage.getItem('appearance') as Appearance) || 'system';
-
-//     applyTheme(savedAppearance);
-
-//     // Add the event listener for system theme changes...
-//     mediaQuery()?.addEventListener('change', handleSystemThemeChange);
-// }
-
 export function useAppearance() {
     const [appearance, setAppearance] = useState<Appearance>('light');
 

@@ -18,7 +18,7 @@ export default function SortableItem({ id, thing }: Props) {
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="p-4 rounded-xl shadow-md cursor-grab text-white font-bold select-none">
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="p-4 rounded-xl shadow-md cursor-grab text-white font-blod select-none hover:scale-101 hover:shadow-lg transition-all duration-200">
             {thing.name}
         </div>
     )

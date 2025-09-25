@@ -6,12 +6,13 @@ export default function DragDropPage() {
     const { things, setThings, shuffleThings, updateOrder } = useDragDrop();
 
     return (
-        <main className="flex flex-col p-6 m-4">
-            <h1 className="text-2xl font-bold mb-4">Drag & Drop</h1>
+        <main className="flex flex-col items-center p-6 sm:p-12 min-h-screen">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6">Drag & Drop</h1>
 
-            <DragDropList things={things} setThings={setThings} updateOrder={updateOrder} />
-
-            <button className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-lg" onClick={shuffleThings}>Shuffle</button>
+            <section className="w-full max-w-md sm:max-w-lg">
+                <DragDropList things={things} setThings={setThings} updateOrder={updateOrder} />
+                <button className="mt-6 w-full px-4 py-3 bg-purple-500 hover:bg-purple-700 text-white cursor-pointer font-semibold rounded-lg shadow-md transition-colors durantion-200" onClick={shuffleThings}>Shuffle</button>
+            </section>
         </main>
     );
 }

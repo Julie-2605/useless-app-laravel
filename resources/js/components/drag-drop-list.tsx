@@ -27,7 +27,7 @@ export default function DragDropList({ things, setThings, updateOrder }: Props) 
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
             <SortableContext items={things.map((thing) => thing.id)} strategy={verticalListSortingStrategy}>
-                <div className="space-y-2">
+                <div className="flex flex-col gap-3">
                     {things.map((thing) => (
                         <SortableItem key={thing.id} id={thing.id} thing={thing} />
                     ))}

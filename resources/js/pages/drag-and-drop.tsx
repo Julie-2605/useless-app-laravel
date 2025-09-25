@@ -1,15 +1,16 @@
 import React from "react";
 import DragDropList from "@/components/drag-drop-list";
 import { useDragDrop } from "@/hooks/use-drag-drop";
-import ThemeToggle from "@/components/theme-toggle";
+import Navbar from "@/components/navbar";
 
 export default function DragDropPage() {
     const { things, setThings, shuffleThings, updateOrder } = useDragDrop();
 
     return (
         <>
+            <Navbar />
+            
             <main className="flex flex-col items-center p-6 sm:p-12 min-h-screen">
-                <ThemeToggle />
                 <h1 className="text-3xl sm:text-4xl font-bold mb-6">Drag & Drop</h1>
 
                 <section className="w-full max-w-md sm:max-w-lg">

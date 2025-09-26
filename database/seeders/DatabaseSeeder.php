@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ShuffledCard;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,9 +26,9 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        //Thing Seeder
         $this->call([
             ThingSeeder::class,
+            ShuffledCardSeeder::class,
         ]);
     }
 }

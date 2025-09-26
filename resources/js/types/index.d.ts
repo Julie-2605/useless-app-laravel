@@ -47,3 +47,10 @@ export interface Thing {
     color: string;
     position: number;
 }
+
+export interface ShuffledCard {
+    id: number;
+    number: number;
+    quote: string;
+    author: string;
+}

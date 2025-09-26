@@ -1,10 +1,13 @@
 import React from "react";
 import DragDropList from "@/components/drag-drop-list";
+import DragDropShuffledCards from "@/components/drag-drop-shuffled-cards";
 import { useDragDrop } from "@/hooks/use-drag-drop";
+import { useShuffledCards } from "@/hooks/use-shuffled-cards";
 import Navbar from "@/components/navbar";
 
 export default function DragDropPage() {
     const { things, setThings, shuffleThings, updateOrder } = useDragDrop();
+    const { shuffledCards, setShuffledCards } = useShuffledCards();
 
     return (
         <>
@@ -21,7 +24,13 @@ export default function DragDropPage() {
 
                 <section className="flex flex-col items-start justify-start w-full mt-10">
                     <h2 className="text-2xl font-bold mb-3">Card to Order</h2>
-                    {/* Ajout des cards à trier */}
+                    <div className="flex justify-center items-center w-full">
+                        <DragDropShuffledCards shuffledCards={shuffledCards} setShuffledCards={setShuffledCards} />
+                    </div>
+                </section>
+
+                <section className="flex flex-col justify-center w-full mt-50">
+                    <h2 className="text-2xl text-center font-bold mb-3">Tableau Kanban</h2>
                 </section>
             </main>
         </>

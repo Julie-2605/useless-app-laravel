@@ -12,7 +12,7 @@ class ShuffledCardController extends Controller
      */
     public function index()
     {
-        //
+        return ShuffledCard::all();
     }
 
     /**

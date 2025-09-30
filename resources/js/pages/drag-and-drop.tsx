@@ -4,6 +4,7 @@ import DragDropShuffledCards from "@/components/drag-drop-shuffled-cards";
 import { useDragDrop } from "@/hooks/use-drag-drop";
 import { useShuffledCards } from "@/hooks/use-shuffled-cards";
 import Navbar from "@/components/navbar";
+import KanbanBoard from "@/components/kanban-board";
 
 export default function DragDropPage() {
     const { things, setThings, shuffleThings, updateOrder } = useDragDrop();
@@ -22,7 +23,7 @@ export default function DragDropPage() {
                     <button className="mt-6 w-full px-4 py-3 bg-purple-500 hover:bg-purple-700 text-white cursor-pointer font-semibold rounded-lg shadow-md transition-colors duration-200" onClick={shuffleThings}>Shuffle</button>
                 </section>
 
-                <section className="flex flex-col items-start justify-start w-full mt-10">
+                <section className="flex flex-col items-start justify-start w-full mt-10 ">
                     <h2 className="text-2xl font-bold mb-3">Card to Order</h2>
                     <div className="flex flex-col justify-center items-center w-full">
                         <DragDropShuffledCards shuffledCards={shuffledCards} setShuffledCards={setShuffledCards} checkCorrectOrder={checkCorrectOrder} />
@@ -32,6 +33,7 @@ export default function DragDropPage() {
 
                 <section className="flex flex-col justify-center w-full mt-50">
                     <h2 className="text-2xl text-center font-bold mb-3">Tableau Kanban</h2>
+                    <KanbanBoard />
                 </section>
             </main>
         </>

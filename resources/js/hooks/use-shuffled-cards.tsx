@@ -19,13 +19,6 @@ export const useShuffledCards = () => {
         setShuffledCards(original);
     }, [original]);
 
-    // const checkCorrectOrder = (cards: ShuffledCard[]) => {
-    //     const numbers = cards.map(card => Number(card.number));
-    //     const sorted = [...numbers].sort((a,b) => a - b);
-
-    //     return numbers.every((number, index) => number === sorted[index]);
-    // }
-
     const checkCorrectOrder = useCallback((list = shuffledCards) => {
         if (list.length === 0) return false;
 
